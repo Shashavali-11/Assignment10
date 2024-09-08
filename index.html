@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chat Box</title>
+    <style>
+      /* for overall chatbox */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      /* Body background */
+      body {
+        background-color: #f0f0f0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100vh;
+      }
+
+      /* Fieldset of total chat-box */
+      fieldset {
+        border: 2px solid red;
+        background-image: repeating-linear-gradient(
+          to top left,
+          indigo,
+          pink,
+          yellow,
+          green,
+          pink
+        );
+        height: 500px;
+        width: 500px;
+        overflow-y: scroll;
+      }
+
+      /* Display Label of day's with position stick  */
+      .day-label {
+        text-align: center;
+        background-color: rgb(26, 138, 194);
+        padding: 5px 10px;
+        margin: 10px 0;
+        width: fit-content;
+        /* Centers the day in the middle of the chat box */
+        align-self: center;
+        border-radius: 10px;
+        font-weight: bold;
+
+        position: sticky;
+        top: 10px;
+      }
+
+      /* Chat Box Outter layer... */
+      .outterbox {
+        height: 700px;
+        width: 500px;
+        padding: 10px;
+        margin: 10px;
+      }
+
+      /* Making margins to incoming & outgoing msg */
+      .incoming-msg,
+      .outgoing-msg {
+        margin: 1pxpx 1px;
+        display: flex;
+      }
+
+      /* Positions of message where to start from start(left - default ) or end(right) */
+      .incoming-msg {
+        justify-content: flex-start;
+      }
+
+      .outgoing-msg {
+        justify-content: flex-end;
+      }
+
+      /* How to display the message content in dimensions(box type) */
+      .msg-content {
+        max-width: 60%;
+        padding: 10px 15px;
+        margin: 0px 10px 20px 0px;
+        border-radius: 15px;
+        font-size: 14px;
+        line-height: 1.4;
+      }
+
+      /* Display of incoming & outgoing msg content which is a shape of msg-content  */
+      .incoming-msg .msg-content {
+        background-color: grey;
+        color: white;
+        border-top-left-radius: 0px;
+      }
+
+      .outgoing-msg .msg-content {
+        background-color: rgb(203, 73, 192);
+        color: white;
+        border-top-right-radius: 0px;
+      }
+
+      /* Input type in footer */
+      .parent2 {
+        display: flex;
+        padding: 10px;
+        margin: 0px 420px;
+        background-color: aliceblue;
+        border-top: 1px solid whitesmoke;
+        position: fixed;
+      }
+
+      /* Text field position with size's */
+      .input-field {
+        /* flex: 1; */
+        height: 40px;
+        width: 460px;
+        padding: 10px;
+        margin: 1px;
+        border: 1px solid grey;
+        border-radius: 5px;
+        font-size: 15px;
+      }
+
+      /* send button position with sizes */
+      .send-button {
+        padding: 10px 15px;
+        margin-left: 10px;
+        background-color: rgba(36, 211, 234, 0.991);
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .send-button:hover {
+        background-color: blueviolet;
+      }
+    </style>
+  </head>
+  <body>
+    <center>
+      <fieldset>
+        <legend>Chat Box</legend>
+        <!-- Chat Box Interface... -->
+        <div class="outterbox">
+          <!-- Sunday -->
+          <div class="sun">
+            <div class="day-label">SUNDAY</div>
+            <div class="incoming-msg">
+              <div class="msg-content">
+                Hello Bro!
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi
+                  delectus accusamus assumenda fugit ea ratione dolorem,
+                  reprehenderit nesciunt illum corrupti sequi asperiores vitae
+                  nihil! Corporis ea perspiciatis quia culpa labore.
+                </p>
+              </div>
+            </div>
+
+            <div class="outgoing-msg">
+              <div class="msg-content">
+                Hlo Bro!
+                <p>
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos
+                  quod, ut ipsa harum ex nisi debitis. Dolorem minus porro,
+                  optio aliquid vitae, reiciendis nulla harum facere eos ad modi
+                  excepturi!
+                </p>
+                <p>
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Ratione quos consequuntur at necessitatibus quia neque vitae
+                  voluptatum repudiandae unde accusantium. Animi quo quasi aut
+                  voluptates tenetur repellat eaque est vitae.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Monday -->
+          <div class="mon">
+            <div class="day-label">MONDAY</div>
+            <div class="incoming-msg">
+              <div class="msg-content">
+                Hello Bro!
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Nostrum velit, consectetur, maxime ut debitis eos expedita
+                  iusto enim nesciunt quo vero labore reiciendis nam unde
+                  deserunt dolorem veniam, eaque similique!
+                </p>
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Aliquid ullam alias nam, at quas in sit aperiam adipisci
+                  corporis similique pariatur eum porro, placeat ab. Nisi, est
+                  voluptate! Sit, rem.
+                </p>
+              </div>
+            </div>
+
+            <div class="outgoing-msg">
+              <div class="msg-content">Hlo Bro!</div>
+            </div>
+          </div>
+
+          <!-- Tuesday -->
+          <div class="tue">
+            <div class="day-label">TUESDAY</div>
+
+            <div class="incoming-msg">
+              <div class="msg-content">
+                Hello Bro!
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Nostrum velit, consectetur, maxime ut debitis eos expedita
+                  iusto enim nesciunt quo vero labore reiciendis nam unde
+                  deserunt dolorem veniam, eaque similique!
+                </p>
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Aliquid ullam alias nam, at quas in sit aperiam adipisci
+                  corporis similique pariatur eum porro, placeat ab. Nisi, est
+                  voluptate! Sit, rem.
+                </p>
+              </div>
+            </div>
+
+            <div class="outgoing-msg">
+              <div class="msg-content">Hlo Bro!</div>
+            </div>
+          </div>
+
+          <!-- Wednesday -->
+          <div class="wed">
+            <div class="day-label">WEDNESDAY</div>
+
+            <div class="incoming-msg">
+              <div class="msg-content">
+                Hello Bro!
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Nostrum velit, consectetur, maxime ut debitis eos expedita
+                  iusto enim nesciunt quo vero labore reiciendis nam unde
+                  deserunt dolorem veniam, eaque similique!
+                </p>
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Aliquid ullam alias nam, at quas in sit aperiam adipisci
+                  corporis similique pariatur eum porro, placeat ab. Nisi, est
+                  voluptate! Sit, rem.
+                </p>
+              </div>
+            </div>
+
+            <div class="outgoing-msg">
+              <div class="msg-content">Hlo Bro!</div>
+            </div>
+          </div>
+
+          <!-- Thursday -->
+          <div class="thu">
+            <div class="day-label">THURSDAY</div>
+
+            <div class="incoming-msg">
+              <div class="msg-content">
+                Hello Bro!
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Nostrum velit, consectetur, maxime ut debitis eos expedita
+                  iusto enim nesciunt quo vero labore reiciendis nam unde
+                  deserunt dolorem veniam, eaque similique!
+                </p>
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Aliquid ullam alias nam, at quas in sit aperiam adipisci
+                  corporis similique pariatur eum porro, placeat ab. Nisi, est
+                  voluptate! Sit, rem.
+                </p>
+              </div>
+            </div>
+
+            <div class="outgoing-msg">
+              <div class="msg-content">Hlo Bro!</div>
+            </div>
+          </div>
+
+          <!-- Friday -->
+          <div class="fri">
+            <div class="day-label">FRIDAY</div>
+
+            <div class="incoming-msg">
+              <div class="msg-content">Hello Bro!</div>
+            </div>
+
+            <div class="outgoing-msg">
+              <div class="msg-content">
+                Hlo Bro!
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Nostrum velit, consectetur, maxime ut debitis eos expedita
+                  iusto enim nesciunt quo vero labore reiciendis nam unde
+                  deserunt dolorem veniam, eaque similique!
+                </p>
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Aliquid ullam alias nam, at quas in sit aperiam adipisci
+                  corporis similique pariatur eum porro, placeat ab. Nisi, est
+                  voluptate! Sit, rem.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Saturday -->
+          <div class="sat">
+            <div class="day-label">SATURDAY</div>
+
+            <div class="incoming-msg">
+              <div class="msg-content">
+                Hello Bro!
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Nostrum velit, consectetur, maxime ut debitis eos expedita
+                  iusto enim nesciunt quo vero labore reiciendis nam unde
+                  deserunt dolorem veniam, eaque similique!
+                </p>
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Aliquid ullam alias nam, at quas in sit aperiam adipisci
+                  corporis similique pariatur eum porro, placeat ab. Nisi, est
+                  voluptate! Sit, rem.
+                </p>
+              </div>
+            </div>
+
+            <div class="outgoing-msg">
+              <div class="msg-content">
+                Hlo Bro!
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Nostrum velit, consectetur, maxime ut debitis eos expedita
+                  iusto enim nesciunt quo vero labore reiciendis nam unde
+                  deserunt dolorem veniam, eaque similique!
+                </p>
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Aliquid ullam alias nam, at quas in sit aperiam adipisci
+                  corporis similique pariatur eum porro, placeat ab. Nisi, est
+                  voluptate! Sit, rem.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+
+
+      <!-- Type Message and Send Button -->
+      <div class="parent2">
+        <input
+          type="text"
+          placeholder="Type a message..."
+          class="input-field"
+        />
+        <button class="send-button">Send</button>
+      </div>
+
+    </center>
+  </body>
+</html>
